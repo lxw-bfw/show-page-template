@@ -1,0 +1,161 @@
+.show-app-content3 {
+  margin-top: 250px;
+}
+.show-app-content3 .conte-footer {
+  text-align: center;
+}
+.show-app-content3 .conte-footer h3 {
+  color: #fff;
+  margin-top: 40px;
+}
+.show-app-content3 .conte-footer img {
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+.rotate-wrap {
+  position: relative;
+}
+.rotate-wrap .out {
+  box-sizing: border-box;
+  width: 288px;
+  height: 288px;
+  border-radius: 50%;
+  border: 5px dashed #999;
+  margin: 0 auto;
+  position: relative;
+  animation: out-move 40s linear infinite;
+}
+.rotate-wrap .out li {
+  box-sizing: border-box;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  left: 50%;
+  top: -30px;
+  transform: translateX(-50%);
+  -ms-transform-origin-y: 174px;
+  -webkit-transform-origin-y: 174px;
+}
+.rotate-wrap .out li span {
+  display: inline-block;
+}
+.rotate-wrap .out li:nth-child(1) {
+  transform: translateX(-50%) rotate(45deg);
+}
+.rotate-wrap .out li:nth-child(1) span {
+  transform: rotate(315deg);
+}
+.rotate-wrap .out li:nth-child(2) {
+  transform: translateX(-50%) rotate(90deg);
+}
+.rotate-wrap .out li:nth-child(2) span {
+  transform: rotate(270deg);
+}
+.rotate-wrap .out li:nth-child(3) {
+  transform: translateX(-50%) rotate(135deg);
+}
+.rotate-wrap .out li:nth-child(3) span {
+  transform: rotate(225deg);
+}
+.rotate-wrap .out li:nth-child(4) {
+  transform: translateX(-50%) rotate(180deg);
+}
+.rotate-wrap .out li:nth-child(4) span {
+  transform: rotate(180deg);
+}
+.rotate-wrap .out li:nth-child(5) {
+  transform: translateX(-50%) rotate(225deg);
+}
+.rotate-wrap .out li:nth-child(5) span {
+  transform: rotate(135deg);
+}
+.rotate-wrap .out li:nth-child(6) {
+  transform: translateX(-50%) rotate(270deg);
+}
+.rotate-wrap .out li:nth-child(6) span {
+  transform: rotate(90deg);
+}
+.rotate-wrap .out li:nth-child(7) {
+  transform: translateX(-50%) rotate(315deg);
+}
+.rotate-wrap .out li:nth-child(7) span {
+  transform: rotate(45deg);
+}
+.rotate-wrap .out li:nth-child(8) {
+  transform: translateX(-50%) rotate(360deg);
+}
+.rotate-wrap .out li:nth-child(8) span {
+  transform: rotate(0deg);
+}
+@keyframes out-move {
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+.rotate-wrap .inner {
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 5px dashed #999;
+  width: 178px;
+  height: 178px;
+  position: absolute;
+  animation: inner-move 40s linear infinite;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+}
+.rotate-wrap .inner li {
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  -ms-transform-origin-y: 109px;
+  -webkit-transform-origin-y: 109px;
+  top: -20px;
+}
+.rotate-wrap .inner li span {
+  display: inline-block;
+}
+.rotate-wrap .inner li:nth-child(1) {
+  transform: translateX(-50%) rotate(90deg);
+}
+.rotate-wrap .inner li:nth-child(1) span {
+  transform: rotate(270deg);
+}
+.rotate-wrap .inner li:nth-child(2) {
+  transform: translateX(-50%) rotate(180deg);
+}
+.rotate-wrap .inner li:nth-child(2) span {
+  transform: rotate(180deg);
+}
+.rotate-wrap .inner li:nth-child(3) {
+  transform: translateX(-50%) rotate(270deg);
+}
+.rotate-wrap .inner li:nth-child(3) span {
+  transform: rotate(90deg);
+}
+.rotate-wrap .inner li:nth-child(4) {
+  transform: translateX(-50%) rotate(360deg);
+}
+.rotate-wrap .inner li:nth-child(4) span {
+  transform: rotate(0deg);
+}
+@keyframes inner-move {
+  100% {
+    transform: translate(-50%, -60%) rotate(-1080deg);
+  }
+}

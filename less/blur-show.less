@@ -1,0 +1,61 @@
+// 第一层模板——毛玻璃特效展示内容
+
+.blur-bg{
+    width:40%;
+    min-width: 360px;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    color: #fff;
+    background: transparent;
+    text-align: center;
+    padding: 10px 30px;
+    padding-bottom: 40px;
+    position: absolute;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    overflow: hidden;
+    z-index: 2;
+    top: 30%;
+    opacity: 0;
+    animation: blur-move 1s forwards;
+    
+}
+@keyframes blur-move{
+    100%{
+        opacity: 1;
+    }
+}
+.blur-bg p{
+    line-height: 26px;
+    font-size: 13px;
+}
+.blur-bg .icon{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.blur-bg::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(255,255,255,0.8); */
+    z-index: -1;
+    border-radius: 8px;
+    background: url('../images/bg.jpg');
+    /* 让这里的背景图片与body背景图相同位置重叠 */
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-filter: blur(50px);
+    -moz-filter: blur(50px);
+    -ms-filter: blur(50px);
+    -o-filter: blur(50px);
+    filter: blur(50px);
+    filter: url('../svg/blur.svg#blur'); /* FireFox, Chrome, Opera */
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=50, MakeShadow=false); /*IE6~IE9*/
+    margin: -30px;
+    
+}

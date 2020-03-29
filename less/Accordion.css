@@ -1,0 +1,65 @@
+.show-app-conten2 {
+  min-width: 800px;
+  position: relative;
+}
+.show-app-conten2 .layered-effect {
+  position: relative;
+  width: 340px;
+  height: 640px;
+  margin-left: 20%;
+  margin-top: 20%;
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(-10deg) skew(25deg) scale(0.7);
+  transition: 0.5s;
+}
+.show-app-conten2 .layered-effect img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.show-app-conten2 .layered-effect img:nth-child(1) {
+  animation: img-move1 2s infinite;
+}
+.show-app-conten2 .layered-effect img:nth-child(2) {
+  animation: img-move2 2s infinite;
+}
+.show-app-conten2 .layered-effect img:nth-child(3) {
+  animation: img-move3 2s infinite;
+}
+.show-app-conten2 .layered-effect img:nth-child(4) {
+  animation: img-move4 2s infinite;
+}
+@keyframes img-move1 {
+  100% {
+    transform: translate(40px, -40px);
+  }
+}
+@keyframes img-move2 {
+  100% {
+    transform: translate(80px, -80px);
+  }
+}
+@keyframes img-move3 {
+  100% {
+    transform: translate(120px, -120px);
+  }
+}
+@keyframes img-move4 {
+  100% {
+    transform: translate(160px, -160px);
+  }
+}
+.show-app-conten2 .downqrcode {
+  position: absolute;
+  left: 68%;
+  top: 0;
+  margin-top: 30%;
+  color: #fff;
+}
+.show-app-conten2 .downqrcode img {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}

@@ -1,0 +1,121 @@
+// 摩天轮旋转
+@out-wdith:288px;
+@out-height:288px;
+@inner-width:178px;
+@inner-height:178px;
+@Outnum:8;
+@innerNum:4;
+@outDeg:360deg/@Outnum;
+@innerDeg:360deg/@innerNum;
+.show-app-content3{
+    margin-top: 250px;
+    .conte-footer{
+        text-align: center;
+        h3{
+            color: #fff;
+            margin-top: 40px;
+        }
+        img{
+            cursor: pointer;
+        }
+    }
+}
+ul {
+    list-style: none;
+}
+.rotate-wrap {
+    position: relative;
+    .out{
+        box-sizing: border-box;
+        width: @out-wdith;
+        height: @out-height;
+        border-radius: 50%;
+        border: 5px dashed #999;
+        margin: 0 auto;
+        position: relative;
+        animation: out-move 40s linear infinite;
+        li{
+          box-sizing: border-box;
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          line-height: 60px;
+          text-align: center;;
+          font-size: 14px;
+          color: #fff;
+          left: 50%;
+          top: -30px;
+          transform:translateX(-50%);
+          -ms-transform-origin-y: @out-height/2 + 30;
+          -webkit-transform-origin-y: @out-height/2 + 30;
+          span{
+              display: inline-block;
+          }
+        }
+        .for(@ind) when(@ind <= @Outnum){
+           li:nth-child(@{ind}){
+              transform:translateX(-50%) rotate(@outDeg * @ind);
+             }
+           li:nth-child(@{ind}) span{
+            transform:rotate(360 - @outDeg * @ind);
+           }  
+           .for((@ind+1))
+       }
+       .for(1);
+       @keyframes out-move {
+           100%{
+               transform: rotate(1080deg);
+           }
+       }
+    }
+    .inner{
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 5px dashed #999;
+        width: @inner-width;
+        height: @inner-height;
+        position: absolute;
+        animation: inner-move 40s linear infinite;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-60%);
+        li{
+            box-sizing: border-box;
+            position: absolute;;
+            border-radius: 50%;
+            text-align: center;;
+            font-size: 14px;
+            color: #fff;
+            left: 50%;
+            top: -20px;
+            transform:translateX(-50%);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            -ms-transform-origin-y: @inner-height / 2 + 20;
+            -webkit-transform-origin-y: @inner-height / 2 + 20;
+            top: -20px;
+            span{
+                display: inline-block;
+            }
+           
+        }
+        .for(@ind) when(@ind <= @innerNum){
+            li:nth-child(@{ind}){
+               transform:translateX(-50%) rotate(@innerDeg * @ind);
+              }
+            li:nth-child(@{ind}) span{
+             transform:rotate(360 - @innerDeg * @ind);
+            }  
+            .for((@ind+1))
+        }
+        .for(1);
+        @keyframes inner-move {
+            100%{
+                transform:translate(-50%,-60%) rotate(-1080deg);
+            }
+        }
+    }
+    
+}

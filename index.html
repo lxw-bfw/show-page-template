@@ -1,0 +1,168 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: lxw
+ * @Date: 2020-03-28 19:55:24
+ * @LastEditors: lxw
+ * @LastEditTime: 2020-03-29 02:55:56
+ -->
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta charset="UTF-8">
+	<title>易教育App - 下载</title>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="在线教育平台 App下载 在线教育App 互联网课程视频 编程视频 flutterApp开发 flutter app下载引导页 ">
+	<meta name="description"
+		content="线上教育行业这几年来都非常的火热，而我们便是抓住这一机会，把教育培训与互联网结合起来，打造一款使用方便、体验良好、内容质量高、集教学与测试一体的在线教育平台——“易教育”">
+	<!--[if lt IE 9]>
+		<script src="javascript/html5shiv.js"></script>
+	<![endif]-->
+	<!-- 基础样式 -->
+	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<!-- 模块化特效样式 -->
+	<link rel="stylesheet" href="./less/blur-show.css">
+	<link rel="stylesheet" href="./less/Accordion.css">
+	<link rel="stylesheet" href="./less/ferris-wheel.css">
+	<link rel="shortcut icon" href="./icon.ico" />
+</head>
+
+<body>
+
+	<!-- 挂载dom，通过它来查找子元素也就是模块 -->
+	<div id="wrap" >
+
+		<!--第一层箭头切换内容，默认网页开始显示这一层内容，这一层主体样式没有封装成less模块，而是直接写在index.css文件里面 -->
+		<!-- 毛玻璃弹出层——背景存在兼容性问题ie不支持  CSS3 blur滤镜实现-->
+		<!-- 内置模板内容一 -->
+		<div class="blur-bg" style="display:block;">
+			<h4>flutter—易教育App</h4>
+			<p>使用flutter开发的在线教育App，“易教育”是在线实用技能学习平台，主要为学习者提供海量、优质的课程，课程结构严谨，用户可以根据自身的学习程度，自主安排学习进度。“易教育”的宗旨是，为每一位想真真正正学到些实用知识、技能的学习者，提供贴心的一站式学习服务。
+			</p>
+			<div>
+				<img src="./images/download.png" alt="" title="点击下载App" class="icon">
+			</div>
+
+		</div>
+
+		<!-- 内置模板内容二  分层叠加 + 二维码-->
+		<div class="show-app-conten2" style="display: none;opacity: 0;">
+			<div class="layered-effect" title="点击展开">
+				<img src="./images/app1.jpg" alt="">
+				<img src="./images/app1.jpg" alt="">
+				<img src="./images/app1.jpg" alt="">
+				<img src="./images/app1.jpg" alt="">
+			</div>
+			<!-- 二维码 -->
+			<div class="downqrcode">
+				<img src="./images/downqrcode-.png" alt="">
+				<h3>多类课程、在线观看</h3>
+				<h4>扫描上方二维码即可下载</h4>
+			</div>
+
+		</div>
+
+		<!-- 内置模板内容三  摩天轮旋转 -->
+		<div class="show-app-content3" style="display: none;opacity: 0;">
+			<div class="rotate-wrap">
+				<ul class="out">
+					<li class="item" style="background-color: rgba(121, 100, 102, 0.8);"> <span title="编程">编程</span>
+					</li>
+					<li class="item" style="background-color: rgba(49, 65, 82, 0.8);"><span title="运营">运营</span></li>
+					<li class="item" style="background-color: rgba(76, 157, 160, 0.8);"><span
+							title="webpack">webpack</span></li>
+					<li class="item" style="background-color: rgba(66, 66, 66, 0.8);"><span title="小程序">小程序</span></li>
+					<li class="item" style="background-color: rgba(193, 131, 106, 0.8);"><span
+							title="flutter">flutter</span></li>
+					<li class="item" style="background-color: rgba(117, 148, 179, 0.8);"><span
+							title="nodejs">nodejs</span></li>
+					<li class="item" style="background-color: rgba(71, 83, 94, 0.8);"> <span title="Java">Java</span>
+					</li>
+					<li class="item" style="background-color: rgba(147, 147, 189, 0.8);"><span title="vue">vue</span>
+					</li>
+				</ul>
+				<ul class="inner">
+					<li class="inner-item" style="background-color: rgba(179, 164, 140, 0.8);">免费</li>
+					<li class="inner-item" style="background-color: rgba(171, 209, 220, 0.8);">好评</li>
+					<li class="inner-item" style="background-color: rgba(238, 215, 163, 0.8);">独立</li>
+					<li class="inner-item" style="background-color: rgba(207, 184, 178, 0.8);">自主</li>
+				</ul>
+			</div>
+			<div class="conte-footer">
+				<h3>多种课程 | 免费观看 | 满足你的需求</h3>
+				<img src="./images/download.png" alt="" title="点击下载App">
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- 左右切换箭头,属于全局部分index.css -->
+	<div class="toggle">
+		<div class="tootile">
+			<h4>点击左右箭头切换内容</h4>
+		</div>
+		<div class="left">
+			<img src="./images/left.png" alt="" id="left">
+		</div>
+		<div class="right">
+			<img src="./images/right.png" alt="" id="right">
+		</div>
+	</div>
+
+
+
+	<script>
+	
+	const wrap = document.getElementById('wrap')
+	const left = document.getElementById('left')
+	const right = document.getElementById('right')
+	const modelEles = wrap.children
+	const length = modelEles.length
+	let current = 0
+
+	right.onclick = rightToggle
+	left.onclick = leftoggle
+
+	function rightToggle(){
+      if (current >= length - 1) {
+		  current = 0;
+	  } else {
+		  current++
+	  }
+	  let prevInd = current === 0 ? length - 1 : current - 1
+	  modelEles[prevInd].style.opacity = 0;
+	  modelEles[prevInd].style.display = 'none'
+	  modelEles[current].style.display = 'block'
+	  setTimeout(() => {
+		modelEles[current].style.transition = '1.7s'
+		modelEles[current].style.opacity = 1
+	  }, 50);
+	}
+	function leftoggle(){
+		if (current <= 0) {
+		  current = length - 1
+	  } else {
+		  current-- 
+	  }
+	  let prevInd = current === length - 1 ? 0 : current + 1
+	  modelEles[prevInd].style.opacity = 0;
+	  modelEles[prevInd].style.display = 'none'
+	  modelEles[current].style.display = 'block'
+	  setTimeout(() => {
+		modelEles[current].style.transition = '1.7s'
+		modelEles[current].style.opacity = 1;
+	  }, 50);
+	}
+	console.log(modelEles)  
+
+	</script>
+</body>
+
+</html>

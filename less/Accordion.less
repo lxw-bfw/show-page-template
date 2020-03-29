@@ -1,0 +1,69 @@
+// 分层悬停效果
+@width:340px;
+@height:640px;
+@num:4;
+@step:40px;
+
+.show-app-conten2{
+    min-width: 800px;
+    position: relative;
+    .layered-effect{
+        position: relative;
+        width: @width;
+        height: @height;
+        margin-left: 20%;
+        margin-top: 20%;
+        background: rgba(0, 0, 0, .1);
+        transform: rotate(-10deg) skew(25deg) scale(.7);
+        transition: .5s;
+        img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: .5s;
+            cursor: pointer;
+            
+        }
+        .for(@ind) when(@ind <= @num){
+             img:nth-child(@{ind}){
+                animation: ~'img-move@{ind}' 2s infinite;
+              }
+             
+            .for((@ind+1))
+        }
+        .for(1);
+
+        @keyframes img-move1 {
+            100%{
+              transform: translate(@step * 1,-@step * 1);
+            }
+        }
+        @keyframes img-move2 {
+            100%{
+              transform: translate(@step * 2,-@step * 2);
+            }
+        }
+        @keyframes img-move3 {
+            100%{
+              transform: translate(@step * 3,-@step * 3);
+            }
+        }
+        @keyframes img-move4 {
+            100%{
+              transform: translate(@step * 4,-@step * 4);
+            }
+        }
+    }
+    .downqrcode{
+       position: absolute;
+       left: 68%;
+       top: 0;
+       margin-top: 30%;
+      color: #fff;
+    }
+    .downqrcode img{
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+    }
+}
