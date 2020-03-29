@@ -4,7 +4,7 @@
  * @Author: lxw
  * @Date: 2020-03-28 20:12:18
  * @LastEditors: lxw
- * @LastEditTime: 2020-03-29 15:32:15
+ * @LastEditTime: 2020-03-29 16:59:14
  -->
 ### YiEdu-App(易教育App)宣传、下载页面——后期扩展成为通用App下载引导页模板或个人在线简历模板
 > 使用flutter开发的一个在线教育平台app，本来只是想单纯的部署到阿里云的tomcat服务器，贴一个下载链接到对应的github项目上，但是心痒痒的，又忍不住，不去做正经事，来给这个app做一个简单的下载-引导页
@@ -62,6 +62,27 @@ background-attachment: fixed;
 ### 全屏轮播切换
 1. 封装通用轮播切换效果
 2. 注意监听尺寸改变时，重新设置相关元素的尺寸
+3.ps:注意：每一个轮播item都有一个独立的背景图片设置，这个需要放到js动态设置，但是时间原因暂时放在了css文件里面
+> 这个后期会添加一个设置背景图片的方法，暴露出来接口
+
+### 网页加载判断
+> 项目主要是背景图片资源比较耗时间，所以以判断第一张显示的背景图片加载完毕，来切换load和正常网页
+```js
+const bgBody = document.body
+        const loadWrap = document.getElementById('load-wrap')
+        const bgImg = new Image();
+
+        bgImg.src = './images/bg.jpg'
+        // 背景图片加载完毕，但是未完全显示
+        bgImg.onload = function () {
+			const cItem = document.getElementsByClassName('carousel-item')[0]
+            cItem.style.backgroundImage = `url(${bgImg.src})`
+            setTimeout(() => {
+                loadWrap.style.display = 'none'
+            }, 500);
+
+        }
+```
 
 
 ### 突发奇想——把它做成App宣传页或个人在线简历模板

@@ -4,7 +4,7 @@
  * @Author: lxw
  * @Date: 2020-03-28 19:55:24
  * @LastEditors: lxw
- * @LastEditTime: 2020-03-29 16:18:38
+ * @LastEditTime: 2020-03-29 16:55:09
  -->
 
 <!DOCTYPE html>
@@ -24,6 +24,7 @@
 	<!-- 基础样式 -->
 	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/load.css">
 	<!-- 模块化特效样式 -->
 	<link rel="stylesheet" href="./less/blur-show.css">
 	<link rel="stylesheet" href="./less/Accordion.css">
@@ -32,6 +33,22 @@
 </head>
 
 <body>
+
+	<!--网页背景图片未加载好显示这个 -->
+	<div class="load-wrap" style="display: block;" id="load-wrap">
+        <section>
+            <div class="loader loader-2">
+                <svg class="loader-star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1">
+                    <polygon
+                        points="29.8 0.3 22.8 21.8 0 21.8 18.5 35.2 11.5 56.7 29.8 43.4 48.2 56.7 41.2 35.1 59.6 21.8 36.8 21.8 "
+                        fill="#18ffff" />
+                </svg>
+                <div class="loader-circles"></div>
+            </div>
+        </section>
+	</div>
+	
 
 	<!-- 挂载dom，通过它来查找子元素也就是模块 -->
 	<div id="wrap">
@@ -136,7 +153,7 @@
 		<div class="tootile">
 			<h4>点击左右箭头切换内容</h4>
 		</div>
-		<div class="code">
+		<div class="code" style="position: absolute;right:0;top:-60%;">
            <h4 onclick="location.href='https://github.com/LXY-1/show-page-template'">源码查阅</h4>
 		</div>
 		<div class="left">
@@ -151,6 +168,25 @@
 
 	<script src="./js/carouselToggle.js"></script>
 	<script>
+
+
+        // 由于背景图片比较大，这判断背景图片是否加载完毕，没有加载完毕的话显示页面加载动画
+        // ps:判断图片加载完毕只能通过img标签或者是Image对象了，所以这里我们不能一开始就css设置body bakcoungIimage了。
+        const bgBody = document.body
+        const loadWrap = document.getElementById('load-wrap')
+        const bgImg = new Image();
+
+        bgImg.src = './images/bg.jpg'
+        // 背景图片加载完毕，但是未完全显示
+        bgImg.onload = function () {
+			const cItem = document.getElementsByClassName('carousel-item')[0]
+            cItem.style.backgroundImage = `url(${bgImg.src})`
+            setTimeout(() => {
+                loadWrap.style.display = 'none'
+            }, 500);
+
+        }
+  
 
 		carouselSlider('carousel-wrap')
 

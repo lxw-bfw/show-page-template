@@ -38,6 +38,21 @@ body{
     justify-content: center;
     align-items: center;
 }
+.carousel-wrap .carousel-item:nth-child(1){
+    background: url('../images/bg.jpg');
+    background-position: center top;
+    background-size: cover;
+}
+.carousel-wrap .carousel-item:nth-child(2){
+    background: url('../images/bg2.jpg');
+    background-position: center top;
+    background-size: cover;
+}
+.carousel-wrap .carousel-item:nth-child(3){
+    background: url('../images/bg1.jpg');
+    background-position: center top;
+    background-size: cover;
+}
 .toggle img{
    width: 28px;
    height: 28px;
